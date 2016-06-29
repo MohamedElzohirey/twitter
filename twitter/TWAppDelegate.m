@@ -7,6 +7,8 @@
 //
 
 #import "TWAppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @interface TWAppDelegate ()
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Fabric with:@[[Twitter class]]];
     return YES;
 }
 
