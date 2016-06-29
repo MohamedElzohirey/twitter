@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TWFollowerCell" rowHeight="147" id="eVR-hb-XQv" userLabel="TWFollowerCell" customClass="TWFollowerCell">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="147"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eVR-hb-XQv" id="snc-IV-Kht">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="146.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multi-line Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32y-lJ-hTz">
+                        <rect key="frame" x="5" y="10" width="368" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Multi-line Content sasada" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="E4S-hb-x4K">
+                        <rect key="frame" x="88.5" y="37" width="284.5" height="38.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="143" placeholderIntrinsicHeight="80.5" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="CVo-dr-uAH">
+                        <rect key="frame" x="5" y="39" width="73.5" height="73"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="73" id="Hnh-rw-KoL"/>
+                            <constraint firstAttribute="width" secondItem="CVo-dr-uAH" secondAttribute="height" multiplier="1:1" id="VBN-Vq-whW"/>
+                            <constraint firstAttribute="width" constant="73.5" id="hDf-Ly-KAo"/>
+                            <constraint firstAttribute="width" constant="100" id="jn7-rP-qaa"/>
+                            <constraint firstAttribute="height" constant="100" id="zcJ-2Z-ZOK"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VBN-Vq-whW"/>
+                                <exclude reference="jn7-rP-qaa"/>
+                                <exclude reference="zcJ-2Z-ZOK"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="E4S-hb-x4K" firstAttribute="leading" secondItem="CVo-dr-uAH" secondAttribute="trailing" constant="10" id="55m-B9-Qug"/>
+                    <constraint firstItem="CVo-dr-uAH" firstAttribute="centerY" secondItem="snc-IV-Kht" secondAttribute="centerY" id="APh-RG-wb2"/>
+                    <constraint firstItem="32y-lJ-hTz" firstAttribute="leading" secondItem="snc-IV-Kht" secondAttribute="leading" constant="5" id="Ids-dt-NE6"/>
+                    <constraint firstItem="CVo-dr-uAH" firstAttribute="top" secondItem="E4S-hb-x4K" secondAttribute="bottom" constant="8" id="JUC-Il-3ff"/>
+                    <constraint firstAttribute="trailing" secondItem="E4S-hb-x4K" secondAttribute="trailing" constant="10" id="Job-MP-On7"/>
+                    <constraint firstItem="32y-lJ-hTz" firstAttribute="leading" secondItem="E4S-hb-x4K" secondAttribute="leading" id="SDe-Hm-NBf"/>
+                    <constraint firstAttribute="trailing" secondItem="32y-lJ-hTz" secondAttribute="trailing" constant="10" id="Tp0-J9-dgJ"/>
+                    <constraint firstItem="32y-lJ-hTz" firstAttribute="top" secondItem="snc-IV-Kht" secondAttribute="top" constant="10" id="bKr-x7-V0y"/>
+                    <constraint firstItem="CVo-dr-uAH" firstAttribute="height" secondItem="snc-IV-Kht" secondAttribute="height" multiplier="1:2" id="dfy-8j-c5v"/>
+                    <constraint firstItem="CVo-dr-uAH" firstAttribute="leading" secondItem="32y-lJ-hTz" secondAttribute="leading" id="eEW-Gm-g0b"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CVo-dr-uAH" secondAttribute="trailing" constant="16" id="m2q-wd-7XX"/>
+                    <constraint firstItem="E4S-hb-x4K" firstAttribute="top" secondItem="32y-lJ-hTz" secondAttribute="bottom" constant="6" id="wQP-DC-fF7"/>
+                    <constraint firstItem="CVo-dr-uAH" firstAttribute="top" secondItem="32y-lJ-hTz" secondAttribute="bottom" constant="7.5" id="waR-cr-DUy"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="SDe-Hm-NBf"/>
+                        <exclude reference="APh-RG-wb2"/>
+                        <exclude reference="JUC-Il-3ff"/>
+                        <exclude reference="dfy-8j-c5v"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarmageView" destination="CVo-dr-uAH" id="ntc-g4-3Pe"/>
+                <outlet property="bioLabel" destination="E4S-hb-x4K" id="D9G-jc-25I"/>
+                <outlet property="fullNameLabel" destination="32y-lJ-hTz" id="oEk-z4-TaI"/>
+            </connections>
+            <point key="canvasLocation" x="326.5" y="339.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon" width="512" height="512"/>
+    </resources>
+</document>
