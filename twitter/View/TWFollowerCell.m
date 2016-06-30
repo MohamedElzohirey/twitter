@@ -40,8 +40,13 @@
 - (CGSize)sizeThatFits:(CGSize)size {
     CGFloat totalHeight = 0;
     totalHeight += [self.fullNameLabel sizeThatFits:size].height;
-    totalHeight += [self.bioLabel sizeThatFits:size].height;
-    totalHeight += 100; // margins
+    if ([self.bioLabel sizeThatFits:size].height<70) {
+        totalHeight +=60;//avatar height (fixed)
+    }else{
+        totalHeight += [self.bioLabel sizeThatFits:size].height;
+    }
+    totalHeight += 50; // margins
+    
     return CGSizeMake(size.width, totalHeight);
 }
 
