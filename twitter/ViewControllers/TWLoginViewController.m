@@ -53,7 +53,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    self.header_lbl.text=[MCLocalization stringForKey:@"login"];
+    self.header_lbl.text=[MCLocalization stringForKey:@"login_header"];
 }
 
 @end
