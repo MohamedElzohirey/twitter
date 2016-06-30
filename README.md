@@ -48,34 +48,36 @@ adding twitter
 * pod 'Fabric'
 *  pod 'TwitterKit'
 * pod 'AFNetworking'
- ```
-a good helper for Uitableviews & collectionviews
+d helper for Uitableviews & collectionviews
 ```
 * pod 'SSDataSources'
  ```
+a goo
+* pod 'Mantle'
+ ```
 for modeling
 ```
-* pod 'Mantle'
 * pod 'FXImageView'
+
+* pod 'libextobjc'  
   ```
  Useful macros and some craziness
 ```
-* pod 'libextobjc'      
 * pod 'SVProgressHUD'
+
+* pod 'UITableView+FDTemplateLayoutCell'
   ```
 Template auto layout cell for automatically UITableViewCell height calculating
 ```
-* pod 'UITableView+FDTemplateLayoutCell'
+* pod 'GSKStretchyHeaderView'
   ```
 StretchyHeaderView
 ```
-* pod 'GSKStretchyHeaderView'
+* pod 'MCLocalization'
   ```
 Localization
 ```
-* pod 'MCLocalization'
+* pod 'PINCache'
   ```
 Caching
 ```
-* pod 'PINCache'
-
