@@ -41,3 +41,41 @@ open -a xcode twitter.xcworkspace
 
 You **must** open the **`twitter.xcworkspace`** and not the `xcodeproj` file so that you're able to compile
 
+### Pods used ###
+```
+adding twitter
+```
+* pod 'Fabric'
+*  pod 'TwitterKit'
+* pod 'AFNetworking'
+ ```
+a good helper for Uitableviews & collectionviews
+```
+* pod 'SSDataSources'
+ ```
+for modeling
+```
+* pod 'Mantle'
+* pod 'FXImageView'
+  ```
+ Useful macros and some craziness
+```
+* pod 'libextobjc'      
+* pod 'SVProgressHUD'
+  ```
+Template auto layout cell for automatically UITableViewCell height calculating
+```
+* pod 'UITableView+FDTemplateLayoutCell'
+  ```
+StretchyHeaderView
+```
+* pod 'GSKStretchyHeaderView'
+  ```
+Localization
+```
+* pod 'MCLocalization'
+  ```
+Caching
+```
+* pod 'PINCache'
+
