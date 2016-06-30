@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.fd_debugLogEnabled = YES;
+    self.tableView.fd_debugLogEnabled = NO;
     
     // Cache by index path initial
     [self prepareTable];
@@ -82,7 +82,7 @@
 -(UIView*)emptyView{
     UIView*emptyView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame),50)];
     UILabel*lbl=[[UILabel  alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame),50)];
-    lbl.text=@"No Followers!";
+    lbl.text=[MCLocalization stringForKey:@"nofollowers"];
     lbl.textAlignment=NSTextAlignmentCenter;
     [emptyView addSubview:lbl];
     return emptyView;
@@ -180,7 +180,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    NSLog(@"*** LOCALIZE NOT IMPLEMENTED ***");
+    self.header_lbl.text=[MCLocalization stringForKey:@"followers_header"];
 }
 
 @end

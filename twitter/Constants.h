@@ -11,6 +11,7 @@
 
 
 #endif /* Constants_h */
+#define kSelectLanguageViewController @"SelectLanguage"
 #define kLoginViewController @"Login"
 #define kFollowersViewController @"Followers"
 #define kFollowerDetailsController @"FollowerDetails"

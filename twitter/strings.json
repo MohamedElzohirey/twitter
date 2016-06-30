@@ -1,0 +1,17 @@
+{
+    "en": {
+        "login_header": "Log in!",
+        "followers_header":"Followers",
+        "nofollowers":"No Foloowers!",
+        "notweets":"No Tweets!"
+
+    },
+    "ar": {
+        "login_header": "تسجيل الدخول!",
+        "followers_header":"المتابعون",
+        "nofollowers":"لا يوجد متابعون!",
+        "notweets":"لا يوجد تدوينات!"
+
+
+    }
+}

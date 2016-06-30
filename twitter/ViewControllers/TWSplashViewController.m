@@ -35,7 +35,7 @@
             [TWProgress dismiss];
         });
     }else{
-            TWLoginViewController* controllser = [self.storyboard instantiateViewControllerWithIdentifier:kLoginViewController];
+            TWLoginViewController* controllser = [self.storyboard instantiateViewControllerWithIdentifier:kSelectLanguageViewController];
             [self.navigationController pushViewController:controllser animated:YES];
     }
 }

@@ -17,4 +17,5 @@
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSString* cacheKey;
 
+
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TWLoginViewController : TWBaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *header_lbl;
 
 @end

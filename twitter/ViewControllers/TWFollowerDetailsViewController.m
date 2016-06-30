@@ -39,11 +39,12 @@
     [_headerView.avatar setMediaImageURL:self.follower.profile_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
     [_headerView.avatar applyRoundMaskCornersOnly];
     [_headerView.background setMediaImageURL:self.follower.profile_background_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
-    [self.tableView addSubview:_headerView];
-    
     // You can change the minimum and maximum content heights
     _headerView.minimumContentHeight = 100;
     _headerView.maximumContentHeight = 280;
+    
+    [self.tableView addSubview:_headerView];
+    
     _headerView.contentAnchor = GSKStretchyHeaderViewContentAnchorTop;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImage:)];
@@ -94,7 +95,8 @@
 -(UIView*)emptyView{
     UIView*emptyView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame),50)];
     UILabel*lbl=[[UILabel  alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame),50)];
-    lbl.text=@"No tweets!";
+    lbl.text=[MCLocalization stringForKey:@"notweets"];
+    lbl.textColor=[UIColor whiteColor];
     lbl.textAlignment=NSTextAlignmentCenter;
     [emptyView addSubview:lbl];
     return emptyView;

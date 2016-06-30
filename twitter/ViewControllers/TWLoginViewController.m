@@ -32,7 +32,7 @@
             [TWLogedInUser sharedInstance].userID=session.userID;
             [TWLogedInUser sharedInstance].authToken=session.authToken;
             [TWLogedInUser setUser:[TWLogedInUser sharedInstance]];
-            TWLoginViewController* controllser = [self.storyboard instantiateViewControllerWithIdentifier:kLoginViewController];
+            TWLoginViewController* controllser = [self.storyboard instantiateViewControllerWithIdentifier:kFollowersViewController];
             [self.navigationController pushViewController:controllser animated:YES];
         } else {
             NSLog(@"Login error: %@", [error localizedDescription]);
@@ -53,7 +53,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    NSLog(@"*** LOCALIZE NOT IMPLEMENTED ***");
+    self.header_lbl.text=[MCLocalization stringForKey:@"login"];
 }
 
 @end
