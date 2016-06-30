@@ -16,5 +16,6 @@
 @property (nonatomic, strong) SSArrayDataSource *followersDataSource;
 @property (strong, nonatomic) TWFollowerResult *result;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSString* cacheKey;
 
 @end

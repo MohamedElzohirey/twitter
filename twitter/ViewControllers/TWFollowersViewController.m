@@ -29,6 +29,8 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
+    self.cacheKey=[NSString stringWithFormat:@"Followers-%@-Cach",[TWLogedInUser user].userID ];
 }
 
 -(void)refreshTable {
@@ -117,10 +119,11 @@
                     [self.followersDataSource removeAllItems];
                 }
                 [self.followersDataSource appendItems:self.result.users];
-
+                [[PINDiskCache sharedCache] setObject:self.result forKey:self.cacheKey block:nil];
             }
             else {
                 NSLog(@"Error: %@", connectionError);
+                [self loadCachedVersion];
             }
         }];
     }
@@ -129,6 +132,22 @@
     }
 }
 
+-(void)loadCachedVersion{
+    @weakify(self)
+    [[PINDiskCache sharedCache] objectForKey:self.cacheKey
+                                       block:^(PINDiskCache * _Nonnull cache, NSString * _Nonnull key, id<NSCoding>  _Nullable object, NSURL * _Nullable fileURL) {
+                                           if (object == nil) {
+                                           } else {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   @strongify(self)
+                                                   self.result=(TWFollowerResult*)object;
+                                                   if(self.followersDataSource.allItems.count==0)
+                                                       [self.followersDataSource appendItems:self.result.users];
+                                               });
+                                               
+                                           }
+                                       }];
+}
 
 - (void)configureCell:(TWFollowerCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     cell.fd_enforceFrameLayout = YES;

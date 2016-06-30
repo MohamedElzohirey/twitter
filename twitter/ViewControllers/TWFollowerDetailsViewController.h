@@ -15,4 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) SSArrayDataSource *twittesDataSource;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSString* cacheKey;
+
 @end

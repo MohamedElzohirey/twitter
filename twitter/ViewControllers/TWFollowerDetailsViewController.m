@@ -44,6 +44,9 @@
     headerView.minimumContentHeight = 100;
     headerView.maximumContentHeight = 280;
     headerView.contentAnchor = GSKStretchyHeaderViewContentAnchorTop;
+    
+    self.cacheKey=[NSString stringWithFormat:@"Tweets-%@-Cach",self.follower.identifierStr ];
+
 }
 
 -(void)refreshTable {
@@ -113,9 +116,11 @@
                 NSArray*tweets=[MTLJSONAdapter modelsOfClass:[TWTweetObject class] fromJSONArray:[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError] error:&jsonError];
                 [self.twittesDataSource removeAllItems];
                 [self.twittesDataSource appendItems:tweets];
+                [[PINDiskCache sharedCache] setObject:tweets forKey:self.cacheKey block:nil];
             }
             else {
                 NSLog(@"Error: %@", connectionError);
+                [self loadCachedVersion];
             }
         }];
     }
@@ -124,7 +129,21 @@
     }
 }
 
-
+-(void)loadCachedVersion{
+    @weakify(self)
+    [[PINDiskCache sharedCache] objectForKey:self.cacheKey
+                                       block:^(PINDiskCache * _Nonnull cache, NSString * _Nonnull key, id<NSCoding>  _Nullable object, NSURL * _Nullable fileURL) {
+                                           if (object == nil) {
+                                           } else {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   @strongify(self)
+                                                   if(self.twittesDataSource.allItems.count==0)
+                                                       [self.twittesDataSource appendItems:(NSArray*)object];
+                                               });
+                                               
+                                           }
+                                       }];
+}
 - (void)configureCell:(TWTweetCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     cell.fd_enforceFrameLayout = YES;
     cell.tweet = self.twittesDataSource.allItems[indexPath.row];
