@@ -24,9 +24,10 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    //check if user is logged in or not
     if ([TWLogedInUser user].userID.length>0) {
         //logged in
-        [TWProgress showWithStatus:@"Authenticating...."];
+        [TWProgress showWithStatus:[MCLocalization stringForKey:@"authenticating"]];
         double delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -47,7 +48,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    NSLog(@"*** LOCALIZE NOT IMPLEMENTED ***");
+    //no thing here to localize
 }
 
 @end

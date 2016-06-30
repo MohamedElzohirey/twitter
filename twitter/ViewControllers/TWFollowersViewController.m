@@ -180,6 +180,7 @@
 #pragma mark - Localization
 
 - (void)localize {
+    //set the header text according to user's selected language
     self.header_lbl.text=[MCLocalization stringForKey:@"followers_header"];
 }
 

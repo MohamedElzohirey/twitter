@@ -200,7 +200,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    NSLog(@"*** LOCALIZE NOT IMPLEMENTED ***");
+    //no thing here to localize yet
 }
 
 @end

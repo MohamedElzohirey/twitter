@@ -19,9 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //starting Fabric with Twitter
     [Fabric with:@[[Twitter class]]];
 
     //Localization
+    //check strings.json
     NSString * path = [[NSBundle mainBundle] pathForResource:@"strings.json" ofType:nil];
     [MCLocalization loadFromJSONFile:path defaultLanguage:@"en"];
     

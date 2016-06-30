@@ -43,7 +43,7 @@
 #pragma mark - Localization
 
 - (void)localize {
-    NSLog(@"*** LOCALIZE NOT IMPLEMENTED ***");
+    //no need for localization here!
 }
 
 
