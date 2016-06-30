@@ -33,6 +33,8 @@
 		D9F057461D24419300DC1868 /* TWURL.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F057451D24419300DC1868 /* TWURL.m */; };
 		D9F0574B1D246D0000DC1868 /* TWStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F0574A1D246D0000DC1868 /* TWStretchyHeaderView.xib */; };
 		D9F0574E1D24700C00DC1868 /* TWStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F0574D1D24700C00DC1868 /* TWStretchyHeaderView.m */; };
+		D9F057511D2527EA00DC1868 /* TWImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F057501D2527EA00DC1868 /* TWImageViewer.m */; };
+		D9F057531D25280000DC1868 /* TWImageViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F057521D25280000DC1868 /* TWImageViewer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,9 @@
 		D9F0574A1D246D0000DC1868 /* TWStretchyHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWStretchyHeaderView.xib; sourceTree = "<group>"; };
 		D9F0574C1D24700C00DC1868 /* TWStretchyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWStretchyHeaderView.h; sourceTree = "<group>"; };
 		D9F0574D1D24700C00DC1868 /* TWStretchyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStretchyHeaderView.m; sourceTree = "<group>"; };
+		D9F0574F1D2527EA00DC1868 /* TWImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWImageViewer.h; sourceTree = "<group>"; };
+		D9F057501D2527EA00DC1868 /* TWImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWImageViewer.m; sourceTree = "<group>"; };
+		D9F057521D25280000DC1868 /* TWImageViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWImageViewer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +196,9 @@
 				D9F0574C1D24700C00DC1868 /* TWStretchyHeaderView.h */,
 				D9F0574D1D24700C00DC1868 /* TWStretchyHeaderView.m */,
 				D9F0574A1D246D0000DC1868 /* TWStretchyHeaderView.xib */,
+				D9F0574F1D2527EA00DC1868 /* TWImageViewer.h */,
+				D9F057501D2527EA00DC1868 /* TWImageViewer.m */,
+				D9F057521D25280000DC1868 /* TWImageViewer.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F057531D25280000DC1868 /* TWImageViewer.xib in Resources */,
 				D9F057201D229E2100DC1868 /* TWFollowerCell.xib in Resources */,
 				D9F056EE1D22607F00DC1868 /* Assets.xcassets in Resources */,
 				D9F057401D2438B400DC1868 /* TWTweetCell.xib in Resources */,
@@ -431,6 +440,7 @@
 				D9F056E61D22607F00DC1868 /* TWAppDelegate.m in Sources */,
 				D9F057381D24333800DC1868 /* TWTweetObject.m in Sources */,
 				D9F056E31D22607F00DC1868 /* main.m in Sources */,
+				D9F057511D2527EA00DC1868 /* TWImageViewer.m in Sources */,
 				D9F057121D22940500DC1868 /* TWProgress.m in Sources */,
 				D9F057011D228F8800DC1868 /* TWLoginViewController.m in Sources */,
 				D9F0571B1D229BAF00DC1868 /* TWFollowersViewController.m in Sources */,

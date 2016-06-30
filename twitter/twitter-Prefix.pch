@@ -11,5 +11,5 @@
 #import "TWProgress.h"
 #import "TWLogedInUser.h"
 #import <libextobjc/EXTScope.h>
-#import <libextobjc/EXTKeyPathCoding.h
+#import <libextobjc/EXTKeyPathCoding.h>
 #import "PINCache/PINDiskCache.h"

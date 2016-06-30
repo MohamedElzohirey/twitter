@@ -15,11 +15,12 @@
 #import "UIImageView+twiiter.h"
 #import "TWTweetObject.h"
 #import "TWStretchyHeaderView.h"
+#import "TWImageViewer.h"
 
 #define kTWStretchyHeaderView @"TWStretchyHeaderView"
 
 @interface TWFollowerDetailsViewController ()
-
+@property (strong, nonatomic)TWStretchyHeaderView *headerView ;
 @end
 
 @implementation TWFollowerDetailsViewController
@@ -32,18 +33,26 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    TWStretchyHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:kTWStretchyHeaderView
+    _headerView = [[[NSBundle mainBundle] loadNibNamed:kTWStretchyHeaderView
                                                                 owner:self
                                                               options:nil]lastObject];
-    [headerView.avatar setMediaImageURL:self.follower.profile_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
-    [headerView.avatar applyRoundMaskCornersOnly];
-    [headerView.background setMediaImageURL:self.follower.profile_background_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
-    [self.tableView addSubview:headerView];
+    [_headerView.avatar setMediaImageURL:self.follower.profile_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
+    [_headerView.avatar applyRoundMaskCornersOnly];
+    [_headerView.background setMediaImageURL:self.follower.profile_background_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
+    [self.tableView addSubview:_headerView];
     
     // You can change the minimum and maximum content heights
-    headerView.minimumContentHeight = 100;
-    headerView.maximumContentHeight = 280;
-    headerView.contentAnchor = GSKStretchyHeaderViewContentAnchorTop;
+    _headerView.minimumContentHeight = 100;
+    _headerView.maximumContentHeight = 280;
+    _headerView.contentAnchor = GSKStretchyHeaderViewContentAnchorTop;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImage:)];
+    [_headerView.avatar addGestureRecognizer:tap];
+    [_headerView.avatar setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImageBackground:)];
+    [_headerView.background addGestureRecognizer:tapBackground];
+    [_headerView.background setUserInteractionEnabled:YES];
     
     self.cacheKey=[NSString stringWithFormat:@"Tweets-%@-Cach",self.follower.identifierStr ];
 
@@ -166,6 +175,21 @@
     });
 }
 
+-(void)openImage:(UITapGestureRecognizer *)tapGesture{
+    TWImageViewer* singleImageView = [[TWImageViewer alloc]initWithFrame:[[[UIApplication sharedApplication] delegate] window] .frame];
+    [singleImageView.mediaImage setImage:_headerView.avatar.image];
+    [singleImageView initZooming];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:singleImageView];
+        
+}
+
+-(void)openImageBackground:(UITapGestureRecognizer *)tapGesture{
+    TWImageViewer* singleImageView = [[TWImageViewer alloc]initWithFrame:[[[UIApplication sharedApplication] delegate] window] .frame];
+    [singleImageView.mediaImage setImage:_headerView.background.image];
+    [singleImageView initZooming];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:singleImageView];
+    
+}
 
 - (IBAction)back:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
