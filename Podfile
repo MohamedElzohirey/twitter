@@ -15,3 +15,5 @@ pod 'UITableView+FDTemplateLayoutCell'
 pod 'GSKStretchyHeaderView'
 # Localization
 pod 'MCLocalization'
+# Caching
+pod 'PINCache'
