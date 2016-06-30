@@ -24,7 +24,7 @@
 }
 
 - (void)setFollower:(TWFollower *)entity{
-    self.fullNameLabel.text=entity.name;
+    self.fullNameLabel.text=[NSString stringWithFormat:@"%@   @%@",entity.name,entity.screen_name];
     self.bioLabel.text=entity.descriptionObj;
     [self.avatarmageView setMediaImageURL:entity.profile_image_url_https placeholder:[UIImage imageNamed:@"icon"]];
     [self.avatarmageView applyRoundMask];
